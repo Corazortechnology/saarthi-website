@@ -6,9 +6,9 @@ import { ThemeToggle } from './ui/ThemeToggle'
 import { cn } from '../lib/cn'
 
 const LINKS = [
-  { label: 'Why Saarthi', href: '#value' },
+  { label: 'The problem', href: '#impact' },
   { label: 'Benefits', href: '#benefits' },
-  { label: 'How it helps', href: '#how' },
+  { label: 'Where it helps', href: '#use-cases' },
   { label: 'Who it’s for', href: '#fleets' },
   { label: 'FAQ', href: '#faq' },
 ]

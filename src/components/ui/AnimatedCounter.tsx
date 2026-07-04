@@ -8,12 +8,14 @@ export function AnimatedCounter({
   prefix = '',
   decimals = 0,
   duration = 1400,
+  locale = 'en-US',
 }: {
   value: number
   suffix?: string
   prefix?: string
   decimals?: number
   duration?: number
+  locale?: string
 }) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, amount: 0.6 })
@@ -42,7 +44,7 @@ export function AnimatedCounter({
   return (
     <span ref={ref} className="font-mono tabular-nums">
       {prefix}
-      {display.toLocaleString('en-US', {
+      {display.toLocaleString(locale, {
         minimumFractionDigits: decimals,
         maximumFractionDigits: decimals,
       })}
