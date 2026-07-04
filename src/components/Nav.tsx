@@ -7,9 +7,9 @@ import { cn } from '../lib/cn'
 
 const LINKS = [
   { label: 'The problem', href: '#impact' },
-  { label: 'Benefits', href: '#benefits' },
-  { label: 'Where it helps', href: '#use-cases' },
-  { label: 'Who it’s for', href: '#fleets' },
+  { label: 'Why now', href: '#why-now' },
+  { label: 'How it works', href: '#how' },
+  { label: 'For fleets', href: '#fleets' },
   { label: 'FAQ', href: '#faq' },
 ]
 

@@ -1,4 +1,4 @@
-import { ShieldCheck } from 'lucide-react'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Reveal } from './ui/Reveal'
 import { StoreBadges } from './ui/StoreBadges'
@@ -36,6 +36,22 @@ export function DownloadCTA() {
               </div>
             </Reveal>
           </div>
+
+          {/* Fleet split */}
+          <Reveal delay={0.2}>
+            <div className="relative mx-auto mt-10 max-w-2xl border-t border-white/10 pt-8 text-center">
+              <p className="text-sm text-white/70">
+                Running a fleet, cab service or delivery team?
+              </p>
+              <a
+                href="mailto:hello@corazor.tech?subject=Saarthi%20fleet%20pilot"
+                className="group mt-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
+              >
+                Book a fleet pilot
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>

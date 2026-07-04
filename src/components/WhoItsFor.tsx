@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { Bike, Building2, Check, UserRound } from 'lucide-react'
+import { ArrowRight, Bike, Building2, Check, UserRound } from 'lucide-react'
 import { Section, SectionHeading } from './ui/Section'
 import { fadeUp, stagger } from '../lib/motion'
 
@@ -71,6 +71,15 @@ export function WhoItsFor() {
                 </li>
               ))}
             </ul>
+            {a.featured && (
+              <a
+                href="#download"
+                className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue transition hover:gap-3 dark:text-brand-blueLight"
+              >
+                Book a fleet pilot
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
+            )}
           </motion.div>
         ))}
       </motion.div>
