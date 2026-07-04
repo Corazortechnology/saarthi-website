@@ -1,0 +1,85 @@
+/* Bundled brand fonts (offline-safe). Inter = headings/body, IBM Plex Mono = numbers. */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource/ibm-plex-mono/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light surfaces (calm, low-arousal). RGB triplets for opacity support. */
+    --bg: 248 250 252; /* #F8FAFC */
+    --surface: 255 255 255; /* #FFFFFF */
+    --surface-2: 241 245 249; /* #F1F5F9 */
+    --border: 226 232 240; /* #E2E8F0 */
+    --text: 15 23 42; /* #0F172A */
+    --muted: 71 85 105; /* #475569 */
+    --accent: 37 99 235; /* #2563EB */
+  }
+
+  .dark {
+    /* Dark surfaces (long-session readability). */
+    --bg: 11 16 32; /* #0B1020 */
+    --surface: 20 27 46; /* #141B2E */
+    --surface-2: 30 41 59; /* #1E293B */
+    --border: 51 65 85; /* #334155 */
+    --text: 241 245 249; /* #F1F5F9 */
+    --muted: 148 163 184; /* #94A3B8 */
+    --accent: 96 165 250; /* #60A5FA */
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+  }
+
+  ::selection {
+    background: rgb(37 99 235 / 0.22);
+  }
+
+  /* Respect reduced-motion at the platform level too (brand requirement). */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #2563eb 0%, #14b8a6 60%, #6d28d9 120%);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--border) / 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border) / 0.6) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+
+  .glass {
+    @apply border border-border/70 bg-surface/70 backdrop-blur-xl;
+  }
+}
