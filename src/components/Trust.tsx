@@ -13,7 +13,7 @@ const PRINCIPLES = [
   { icon: HandHeart, title: 'Calm, not alarmist', desc: 'Alerts are designed to steady you, never to panic you.' },
   { icon: EyeOff, title: 'Respects your privacy', desc: 'Your camera view stays on your phone during the drive.' },
   { icon: Accessibility, title: 'Built to be accessible', desc: 'Honors reduced-motion and reads clearly, day or night.' },
-  { icon: Gauge, title: 'Light on your phone', desc: 'Tuned to be gentle on battery and data while you drive.' },
+  { icon: Gauge, title: 'Runs efficiently', desc: 'On-device processing tuned for everyday driving — no cloud video upload.' },
 ]
 
 export function Trust() {

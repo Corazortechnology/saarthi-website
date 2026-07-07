@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Container } from './ui/Container'
 import { Logo } from './ui/Logo'
 
@@ -5,10 +6,12 @@ const COLS = [
   {
     title: 'Product',
     links: [
-      { label: 'Why Saarthi', href: '#value' },
-      { label: 'Benefits', href: '#benefits' },
-      { label: 'How it helps', href: '#how' },
-      { label: 'FAQ', href: '#faq' },
+      { label: 'Drivers', to: '/drivers' },
+      { label: 'Fleets', to: '/fleets' },
+      { label: 'Insurers', to: '/insurers' },
+      { label: 'Roadmap', to: '/roadmap' },
+      { label: 'Support', to: '/support' },
+      { label: 'FAQ', to: '/drivers#faq' },
     ],
   },
   {
@@ -16,7 +19,7 @@ const COLS = [
     links: [
       { label: 'About', href: '#' },
       { label: 'Careers', href: '#' },
-      { label: 'Contact', href: '#' },
+      { label: 'Contact', href: 'mailto:hello@corazor.tech' },
     ],
   },
   {
@@ -35,7 +38,9 @@ export function Footer() {
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
-            <Logo />
+            <Link to="/" aria-label="Saarthi home">
+              <Logo />
+            </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Saarthi is your in-car safety co-pilot — gentle, timely help that keeps drivers alert and
               focused, straight from a phone.
@@ -49,9 +54,15 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <a href={l.href} className="text-sm text-fg/80 transition hover:text-accent">
-                      {l.label}
-                    </a>
+                    {'to' in l ? (
+                      <Link to={l.to} className="text-sm text-fg/80 transition hover:text-accent">
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a href={l.href} className="text-sm text-fg/80 transition hover:text-accent">
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

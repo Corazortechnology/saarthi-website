@@ -3,33 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Plus } from 'lucide-react'
 import { Section, SectionHeading } from './ui/Section'
 import { cn } from '../lib/cn'
-
-const FAQS = [
-  {
-    q: 'Do I need to buy any extra hardware?',
-    a: 'No. Saarthi runs entirely on a phone you already own — no dash-cams, dongles, sensors or wiring. Just mount your phone and start your drive.',
-  },
-  {
-    q: 'Which phones does it work on?',
-    a: 'Saarthi works on modern iPhones and Android phones. If your phone can run everyday apps and has a front camera, it can run Saarthi.',
-  },
-  {
-    q: 'Will it drain my battery or data?',
-    a: 'It’s tuned to be light. Saarthi is built to keep watch through a full drive while being gentle on battery, and it keeps helping even with no internet connection.',
-  },
-  {
-    q: 'Is my camera or video private?',
-    a: 'Yes. Saarthi is private by design — your camera view stays on your phone during the drive. It looks out for you without sending your video away.',
-  },
-  {
-    q: 'Does it work at night or offline?',
-    a: 'Yes. Saarthi is designed to help day or night, and keeps watching out for you on stretches with no signal.',
-  },
-  {
-    q: 'Can I roll this out to a whole fleet?',
-    a: 'Absolutely. Because there’s no hardware to install, fleets can get every driver protected in days. Reach out and we’ll help you get started.',
-  },
-]
+import { FAQ_ALL, type FaqItem } from '../content/faq'
 
 function Item({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false)
@@ -74,16 +48,22 @@ function Item({ q, a, index }: { q: string; a: string; index: number }) {
   )
 }
 
-export function FAQ() {
+export function FAQ({
+  items = FAQ_ALL,
+  eyebrow = 'Questions',
+  title = 'Everything you’re wondering',
+  subtitle = 'The short version: it’s just your phone, and it’s built to earn your trust.',
+}: {
+  items?: FaqItem[]
+  eyebrow?: string
+  title?: string
+  subtitle?: string
+}) {
   return (
     <Section id="faq" className="bg-surface/30">
-      <SectionHeading
-        eyebrow="Questions"
-        title="Everything you’re wondering"
-        subtitle="The short version: it’s just your phone, and it’s built to earn your trust."
-      />
+      <SectionHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />
       <div className="mx-auto mt-12 max-w-3xl">
-        {FAQS.map((f, i) => (
+        {items.map((f, i) => (
           <Item key={f.q} q={f.q} a={f.a} index={i} />
         ))}
       </div>

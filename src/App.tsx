@@ -1,45 +1,23 @@
-import { Nav } from './components/Nav'
-import { ScrollProgress } from './components/ui/ScrollProgress'
-import { Hero } from './components/Hero'
-import { TrustMarquee } from './components/TrustMarquee'
-import { IndiaImpact } from './components/IndiaImpact'
-import { NoHardware } from './components/NoHardware'
-import { WhyNow } from './components/WhyNow'
-import { Benefits } from './components/Benefits'
-import { HowItHelps } from './components/HowItHelps'
-import { UseCases } from './components/UseCases'
-import { Comparison } from './components/Comparison'
-import { WhoItsFor } from './components/WhoItsFor'
-import { Trust } from './components/Trust'
-import { RoadSafety } from './components/RoadSafety'
-import { Vision } from './components/Vision'
-import { FAQ } from './components/FAQ'
-import { DownloadCTA } from './components/DownloadCTA'
-import { Footer } from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import { SiteLayout } from './layouts/SiteLayout'
+import { HomePage } from './pages/HomePage'
+import { DriversPage } from './pages/DriversPage'
+import { FleetsPage } from './pages/FleetsPage'
+import { InsurersPage } from './pages/InsurersPage'
+import { RoadmapPage } from './pages/RoadmapPage'
+import { SupportPage } from './pages/SupportPage'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-bg text-fg">
-      <ScrollProgress />
-      <Nav />
-      <main>
-        <Hero />
-        <TrustMarquee />
-        <IndiaImpact />
-        <NoHardware />
-        <WhyNow />
-        <Benefits />
-        <HowItHelps />
-        <UseCases />
-        <Comparison />
-        <WhoItsFor />
-        <Trust />
-        <RoadSafety />
-        <Vision />
-        <FAQ />
-        <DownloadCTA />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route element={<SiteLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="drivers" element={<DriversPage />} />
+        <Route path="fleets" element={<FleetsPage />} />
+        <Route path="insurers" element={<InsurersPage />} />
+        <Route path="roadmap" element={<RoadmapPage />} />
+        <Route path="support" element={<SupportPage />} />
+      </Route>
+    </Routes>
   )
 }

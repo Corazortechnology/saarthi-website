@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Logo } from './ui/Logo'
@@ -6,16 +7,17 @@ import { ThemeToggle } from './ui/ThemeToggle'
 import { cn } from '../lib/cn'
 
 const LINKS = [
-  { label: 'The problem', href: '#impact' },
-  { label: 'Why now', href: '#why-now' },
-  { label: 'How it works', href: '#how' },
-  { label: 'For fleets', href: '#fleets' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Drivers', to: '/drivers' },
+  { label: 'Fleets', to: '/fleets' },
+  { label: 'Insurers', to: '/insurers' },
+  { label: 'Roadmap', to: '/roadmap' },
+  { label: 'Support', to: '/support' },
 ]
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -23,6 +25,10 @@ export function Nav() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
 
   return (
     <header
@@ -32,33 +38,36 @@ export function Nav() {
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4">
-        <a href="#top" className="shrink-0" aria-label="Saarthi home">
+        <Link to="/" className="shrink-0" aria-label="Saarthi home">
           <Logo />
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-muted transition hover:bg-surface2/70 hover:text-fg"
+            <Link
+              key={l.to}
+              to={l.to}
+              className={cn(
+                'rounded-full px-3 py-2 text-sm font-medium transition hover:bg-surface2/70 hover:text-fg',
+                pathname === l.to ? 'text-fg' : 'text-muted',
+              )}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <a
-            href="#download"
+          <Link
+            to="/#download"
             className="hidden rounded-full bg-brand-blue px-4 py-2 text-sm font-semibold text-white shadow-brand transition hover:brightness-110 sm:inline-flex"
           >
             Get the app
-          </a>
+          </Link>
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-full border border-border/70 text-muted md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full border border-border/70 text-muted lg:hidden"
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
@@ -68,31 +77,31 @@ export function Nav() {
         </div>
       </Container>
 
-      {/* Mobile menu */}
       <div
         className={cn(
-          'overflow-hidden border-border/70 bg-bg/95 backdrop-blur-xl transition-all duration-300 md:hidden',
-          open ? 'max-h-96 border-b' : 'max-h-0',
+          'overflow-hidden border-border/70 bg-bg/95 backdrop-blur-xl transition-all duration-300 lg:hidden',
+          open ? 'max-h-[28rem] border-b' : 'max-h-0',
         )}
       >
         <Container className="flex flex-col gap-1 py-3">
           {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted transition hover:bg-surface2/70 hover:text-fg"
+            <Link
+              key={l.to}
+              to={l.to}
+              className={cn(
+                'rounded-xl px-3 py-2.5 text-sm font-medium transition hover:bg-surface2/70 hover:text-fg',
+                pathname === l.to ? 'text-fg' : 'text-muted',
+              )}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#download"
-            onClick={() => setOpen(false)}
+          <Link
+            to="/#download"
             className="mt-1 rounded-xl bg-brand-blue px-3 py-2.5 text-center text-sm font-semibold text-white"
           >
             Get the app
-          </a>
+          </Link>
         </Container>
       </div>
     </header>

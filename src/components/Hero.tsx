@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, ChevronDown, ShieldCheck, Smartphone, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Container } from './ui/Container'
 import { DeviceMockup } from './ui/DeviceMockup'
 import { StoreBadges } from './ui/StoreBadges'
@@ -73,13 +74,13 @@ export function Hero() {
           </motion.div>
 
           <motion.div variants={reduce ? undefined : fadeUp} className="mt-5">
-            <a
-              href="#fleets"
+            <Link
+              to="/fleets"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-accent transition hover:gap-3"
             >
               Running a fleet? Book a pilot
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </Link>
           </motion.div>
 
           <motion.ul

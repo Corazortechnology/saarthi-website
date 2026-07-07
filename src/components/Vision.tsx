@@ -1,10 +1,11 @@
 import { Target } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Reveal } from './ui/Reveal'
+import { cn } from '../lib/cn'
 
-export function Vision() {
+export function Vision({ className }: { className?: string }) {
   return (
-    <section className="scroll-mt-24 py-8 sm:py-12">
+    <section className={cn('scroll-mt-24 py-8 sm:py-12', className)}>
       <Container>
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-brand-blue/[0.08] via-surface to-teal-active/[0.06] px-6 py-14 text-center shadow-card sm:px-12 sm:py-20 dark:from-brand-blue/[0.12] dark:to-insight/[0.1]">
