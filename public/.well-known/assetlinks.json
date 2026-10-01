@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.saarthi.saarthi_family",
+      "sha256_cert_fingerprints": [
+        "4A:71:CB:2E:A3:5B:FE:58:4F:E0:F0:34:70:D0:CE:CB:09:01:86:6C:D6:1A:8D:6B:40:8E:B9:8A:03:A2:65:91"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bluebird.bluebird_dms",
+      "sha256_cert_fingerprints": [
+        "5C:5B:97:6F:B3:FB:C9:DA:C4:58:83:42:84:CD:29:96:10:5A:81:1C:41:B4:3C:45:67:F1:58:32:57:A3:F3:23"
+      ]
+    }
+  }
+]

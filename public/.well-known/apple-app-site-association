@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["77RD7SA85F.com.saarthi.saarthiFamily"],
+        "components": [{"/": "/family/invite", "?": {"code": "*"}}]
+      },
+      {
+        "appIDs": ["77RD7SA85F.com.honeyjain.bluebirddms"],
+        "components": [{"/": "/fleet/invite", "?": {"code": "*"}}]
+      }
+    ]
+  }
+}
