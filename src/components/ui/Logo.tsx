@@ -1,4 +1,3 @@
-import icon from '../../assets/saarthi-icon.png'
 import { cn } from '../../lib/cn'
 
 export function Logo({
@@ -9,17 +8,14 @@ export function Logo({
   showWordmark?: boolean
 }) {
   return (
-    <span className={cn('inline-flex items-center gap-2.5', className)}>
+    <span className={cn('inline-flex max-w-full shrink-0 overflow-hidden rounded-lg bg-white', className)}>
       <img
-        src={icon}
-        alt="Saarthi"
-        width={36}
-        height={36}
-        className="h-9 w-9 rounded-xl shadow-sm ring-1 ring-black/5"
+        src={showWordmark ? '/brand/lockup.png' : '/brand/mark.png'}
+        alt="Saarthi Telematics"
+        width={showWordmark ? 165 : 42}
+        height={42}
+        className={showWordmark ? 'h-[42px] w-[165px] max-w-full object-contain' : 'h-[42px] w-[42px] object-contain'}
       />
-      {showWordmark && (
-        <span className="text-lg font-bold tracking-tight text-fg">Saarthi</span>
-      )}
     </span>
   )
 }
