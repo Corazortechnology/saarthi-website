@@ -7,22 +7,23 @@ import { WhyNow } from '../components/WhyNow'
 import { FAQ_FLEETS } from '../content/faq'
 import { fadeUp, stagger } from '../lib/motion'
 import { Section, SectionHeading } from '../components/ui/Section'
+import { contactMailto } from '../lib/contact'
 
 const PILOT_STEPS = [
   {
     step: '01',
     title: 'Scope your fleet',
-    desc: 'Tell us vehicle count, driver profiles, and safety goals. We align on pilot metrics — incidents, near-misses, adoption.',
+    desc: 'Tell us about your vehicles, drivers and safety goals. Together, we’ll agree on pilot measures such as adoption, safety events and driver feedback.',
   },
   {
     step: '02',
-    title: 'Drivers download & mount',
-    desc: 'No dashcams or wiring. Each driver installs Saarthi, mounts their phone, and starts — onboarding in minutes.',
+    title: 'Set up each driver’s phone',
+    desc: 'Each driver installs Saarthi, completes setup and mounts their phone securely before starting a drive.',
   },
   {
     step: '03',
     title: 'Review trip insights',
-    desc: 'See fatigue and distraction patterns per trip. Coach early, reduce claims, and scale to more vehicles over the air.',
+    desc: 'Review fatigue and distraction patterns across trips. Use the findings to guide coaching and plan a wider rollout.',
   },
 ]
 
@@ -33,8 +34,8 @@ function FleetPilotSteps() {
     <Section className="bg-surface/30">
       <SectionHeading
         eyebrow="Fleet rollout"
-        title="Live in days, not months"
-        subtitle="Traditional driver-monitoring means boxes and cables per vehicle. Saarthi is pure software on phones drivers already carry."
+        title="A simpler path to your fleet pilot"
+        subtitle="Start with compatible phones your drivers already carry, then agree on setup, training and rollout with our team."
       />
       <motion.div
         variants={reduce ? undefined : stagger(0.08)}
@@ -62,10 +63,10 @@ function FleetPilotSteps() {
 function FleetBenefits() {
   const reduce = useReducedMotion()
   const points = [
-    'Fewer incidents and insurance claims',
+    'Insights to support safer driving',
     'Safety insights per trip — no hardware to maintain',
-    'Instant scale as you add drivers',
-    'Works offline on long haul routes',
+    'Add drivers as your pilot grows',
+    'Local driver alerts on routes with poor signal',
   ]
 
   return (
@@ -73,7 +74,7 @@ function FleetBenefits() {
       <SectionHeading
         eyebrow="Fleet value"
         title="Safety that scales with your team"
-        subtitle="Protect every driver without per-vehicle installs, downtime, or wiring bills."
+        subtitle="Bring driver monitoring to your team without installing a dedicated system in every vehicle."
       />
       <motion.ul
         variants={reduce ? undefined : stagger(0.06)}
@@ -108,10 +109,10 @@ export function FleetsPage() {
             Protect every driver <span className="text-gradient">without new hardware.</span>
           </>
         }
-        subtitle="Roll out driver safety across your whole team in days — no dashcams, dongles, or per-vehicle installs."
+        subtitle="Bring driver safety to your team through compatible phones, with a pilot tailored to your fleet."
       >
         <a
-          href="mailto:hello@corazor.tech?subject=Saarthi%20fleet%20pilot"
+          href={contactMailto('Saarthi fleet pilot')}
           className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-sm font-semibold text-white shadow-brand transition hover:brightness-110"
         >
           Book a fleet pilot
@@ -126,17 +127,17 @@ export function FleetsPage() {
         items={FAQ_FLEETS}
         eyebrow="Fleet FAQ"
         title="Questions from fleet operators"
-        subtitle="Rollout, hardware, insights, and driver phones — answered for ops and safety teams."
+        subtitle="Answers about rollout, hardware, trip insights and phone compatibility for operations and safety teams."
       />
       <section className="scroll-mt-24 pb-24 pt-8">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-2xl font-bold text-fg">Ready to pilot with your fleet?</h2>
-          <p className="mt-3 text-muted">We’ll help you scope metrics and get drivers protected in days.</p>
+          <p className="mt-3 text-muted">We’ll help you define your goals, choose a driver group and plan the rollout.</p>
           <a
-            href="mailto:hello@corazor.tech?subject=Saarthi%20fleet%20pilot"
+            href={contactMailto('Saarthi fleet pilot')}
             className="group mt-6 inline-flex items-center gap-2 rounded-full border border-border/70 px-6 py-3 text-sm font-semibold text-fg transition hover:bg-surface2/70"
           >
-            Contact fleet team
+            Contact our fleet team
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>

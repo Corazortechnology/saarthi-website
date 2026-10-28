@@ -58,15 +58,15 @@ export function Hero() {
             variants={reduce ? undefined : fadeUp}
             className="mt-6 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-fg sm:text-5xl lg:text-6xl"
           >
-            Everyone home safe, <span className="text-gradient">every drive.</span>
+            Helping everyone get home safely, <span className="text-gradient">every drive.</span>
           </motion.h1>
 
           <motion.p
             variants={reduce ? undefined : fadeUp}
             className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-muted"
           >
-            Saarthi turns the phone already in your vehicle into a calm, always-watching safety co-pilot —
-            a gentle nudge the moment focus slips or fatigue sets in. No dongles, no dashcams, no installs.
+            Turn your phone into a safety co-pilot that watches for signs of fatigue and distraction.
+            Get timely reminders to refocus or take a break, with no dedicated monitoring hardware to install.
           </motion.p>
 
           <motion.div variants={reduce ? undefined : fadeUp} className="mt-8">

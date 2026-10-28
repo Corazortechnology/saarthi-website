@@ -5,6 +5,7 @@ type AudienceCard = {
   title: string
   desc: string
   href: string
+  cta: string
   points: string[]
   featured?: boolean
 }
@@ -15,21 +16,24 @@ export const AUDIENCE_GATEWAY: AudienceCard[] = [
     title: 'Everyday drivers',
     desc: 'Long highway runs, late-night returns, and daily commutes.',
     href: '/drivers',
-    points: ['A watchful passenger, always', 'Gentle fatigue check-ins', 'Nothing new to buy'],
+    cta: 'Explore driver features',
+    points: ['Support for attentive driving', 'Fatigue and distraction alerts', 'No dedicated monitoring device'],
   },
   {
     icon: Building2,
     title: 'Fleet owners',
-    desc: 'Roll out driver safety across the whole team in days, not months.',
+    desc: 'Plan a driver-safety pilot that fits your vehicles and team.',
     href: '/fleets',
-    points: ['Fewer incidents & claims', 'Safety insights per trip', 'No per-vehicle hardware'],
+    cta: 'Plan a fleet pilot',
+    points: ['Support for driver coaching', 'Safety insights per trip', 'No dedicated monitoring hardware'],
     featured: true,
   },
   {
     icon: Shield,
     title: 'Insurers',
-    desc: 'Telematics and risk insights without hardware friction.',
+    desc: 'Explore driver-safety insights from compatible phones.',
     href: '/insurers',
-    points: ['Lower loss ratios', 'Anonymised trip signals', 'Reach more policyholders'],
+    cta: 'Explore insurance partnerships',
+    points: ['Pilots with agreed outcomes', 'Proposed anonymised insights', 'Reach more policyholders'],
   },
 ]

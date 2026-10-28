@@ -8,20 +8,20 @@ const AUDIENCES = [
     icon: UserRound,
     title: 'Everyday drivers',
     desc: 'For long highway runs, late-night returns and daily commutes.',
-    points: ['A watchful passenger, always', 'Gentle fatigue check-ins', 'Nothing new to buy'],
+    points: ['Support for attentive driving', 'Fatigue and distraction alerts', 'No dedicated monitoring device'],
   },
   {
     icon: Building2,
     title: 'Fleets & logistics',
-    desc: 'Roll out driver safety across the whole team in days, not months.',
-    points: ['Fewer incidents & claims', 'Safety insights per trip', 'No per-vehicle hardware'],
+    desc: 'Plan a driver-safety pilot that fits your vehicles and team.',
+    points: ['Support for driver coaching', 'Safety insights per trip', 'No dedicated monitoring hardware'],
     featured: true,
   },
   {
     icon: Bike,
-    title: 'Ride & delivery',
-    desc: 'Keep gig and last-mile drivers safe across every shift.',
-    points: ['Works on personal phones', 'Light on battery & data', 'Onboarding in minutes'],
+    title: 'Cab & delivery drivers',
+    desc: 'Support attentive driving during busy shifts and consecutive trips.',
+    points: ['Uses compatible phones', 'Local driver alerts', 'Guided setup and calibration'],
   },
 ]
 
@@ -32,7 +32,7 @@ export function WhoItsFor() {
       <SectionHeading
         eyebrow="Who it’s for"
         title="One safety co-pilot, every kind of driver"
-        subtitle="From a single family car to a nationwide fleet — Saarthi scales without a single new gadget."
+        subtitle="Explore driver-safety support for family cars, delivery vehicles and commercial fleets."
       />
 
       <motion.div
@@ -55,7 +55,7 @@ export function WhoItsFor() {
           >
             {a.featured && (
               <span className="absolute right-5 top-5 rounded-full bg-brand-blue px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-white">
-                Most popular
+                For teams
               </span>
             )}
             <div className="grid h-12 w-12 place-items-center rounded-xl bg-surface2/80 text-accent ring-1 ring-border/70">

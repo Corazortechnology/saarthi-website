@@ -5,8 +5,7 @@ import { ROADMAP_PHASES } from '../content/roadmap'
 import { Container } from '../components/ui/Container'
 import { Reveal } from '../components/ui/Reveal'
 import { Section, SectionHeading } from '../components/ui/Section'
-
-const SUPPORT_EMAIL = 'hello@corazor.tech'
+import { CONTACT_EMAIL, contactMailto } from '../lib/contact'
 
 export function SupportPage() {
   const [name, setName] = useState('')
@@ -16,11 +15,10 @@ export function SupportPage() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
-    const subject = encodeURIComponent('Saarthi support waitlist')
-    const body = encodeURIComponent(
+    window.location.href = contactMailto(
+      'Saarthi support waitlist',
       `Name: ${name}\nEmail: ${email}\nInterested in supporting: ${wantsSupport ? 'Yes' : 'Not yet'}\n`,
     )
-    window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
@@ -37,14 +35,13 @@ export function SupportPage() {
           </Reveal>
           <Reveal delay={0.05}>
             <h1 className="mx-auto mt-6 max-w-3xl text-balance text-4xl font-extrabold tracking-tight text-fg sm:text-5xl">
-              Help us put a <span className="text-gradient">life-saving co-pilot</span> in every pocket
+              Help us put a <span className="text-gradient">safety co-pilot</span> in more vehicles.
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg text-muted">
-              Saarthi is built to save lives — one drive at a time. Instead of traditional fundraising alone,
-              we&apos;re inviting the community to back a mission: safer roads for everyone, starting with the
-              phone you already own.
+              We&apos;re building Saarthi to support safer journeys, one drive at a time.
+              Join a community working towards safer roads, starting with the phone you already own.
             </p>
           </Reveal>
         </Container>
@@ -82,11 +79,11 @@ export function SupportPage() {
               align="left"
               eyebrow="Join the waitlist"
               title="Stay close to the mission"
-              subtitle="Leave your details and we'll keep you updated on launches, pilots, and ways to support Saarthi. No payment required in this step."
+              subtitle="Send us your details by email for updates on launches, pilots and ways to support Saarthi. Joining the waitlist is free."
             />
             {submitted ? (
               <p className="mt-8 rounded-xl border border-ok/30 bg-ok/10 p-4 text-sm text-fg">
-                Thanks — your email app should open with a pre-filled message. Send it to complete your signup.
+                Your email app should open with a draft message. Send it to request a place on the waitlist.
               </p>
             ) : (
               <form onSubmit={handleSubmit} className="mt-8 space-y-4">
@@ -136,6 +133,10 @@ export function SupportPage() {
                 </button>
               </form>
             )}
+            <p className="mt-5 text-sm text-muted">
+              You can also email us at{' '}
+              <a href={contactMailto()} className="break-all font-medium text-accent underline underline-offset-2">{CONTACT_EMAIL}</a>.
+            </p>
           </div>
 
           <div className="rounded-2xl border border-border/70 bg-surface/60 p-8">
@@ -143,7 +144,7 @@ export function SupportPage() {
             <h3 className="mt-4 text-xl font-semibold text-fg">Share with a driver you care about</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               Not ready to support financially? Tell a friend, family member, or fleet operator about Saarthi.
-              The fastest way to save lives is getting the co-pilot into more hands.
+              Help more drivers discover tools that support safer journeys.
             </p>
             <Link
               to="/drivers"

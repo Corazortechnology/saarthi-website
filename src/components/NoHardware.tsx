@@ -5,10 +5,10 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { fadeUp, stagger } from '../lib/motion'
 
 const POINTS = [
-  { icon: PlugZap, title: 'Zero hardware', desc: 'No dongles, dash-cams, wiring or installations to buy or fit.' },
-  { icon: Smartphone, title: 'The phone you own', desc: 'Runs on everyday iPhones and Android phones — front camera only.' },
-  { icon: Timer, title: 'Ready in minutes', desc: 'Mount, tap start, and drive. Setup takes about two minutes.' },
-  { icon: Wifi, title: 'Works offline', desc: 'Keeps watching out for you even with no signal on the road.' },
+  { icon: PlugZap, title: 'No dedicated hardware', desc: 'Use a compatible phone and a secure mount, without a separate monitoring device or vehicle wiring.' },
+  { icon: Smartphone, title: 'The phone you own', desc: 'Driver monitoring uses the front camera on supported iPhones and Android phones.' },
+  { icon: Timer, title: 'Simple setup', desc: 'Create your account, mount your phone and calibrate while parked.' },
+  { icon: Wifi, title: 'Local driver alerts', desc: 'Fatigue and distraction monitoring can continue without a signal once setup is complete.' },
 ]
 
 export function NoHardware() {
@@ -28,8 +28,8 @@ export function NoHardware() {
             </Reveal>
             <Reveal delay={0.05}>
               <p className="mt-3 max-w-2xl text-pretty text-white/85">
-                Fleet safety tech usually means expensive cameras and messy installs. Saarthi skips all of
-                it — the safety co-pilot lives on the phone already in the cab.
+                Saarthi brings driver monitoring to a compatible phone already in your vehicle.
+                Set it up in a secure mount and complete calibration before you drive.
               </p>
             </Reveal>
 

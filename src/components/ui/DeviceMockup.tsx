@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { CheckCircle2, Coffee, Eye, Gauge, Moon } from 'lucide-react'
+import { CheckCircle2, Coffee, Eye, Gauge } from 'lucide-react'
 
 type Tone = 'ok' | 'watch'
 
@@ -20,11 +20,11 @@ const STATES: DemoState[] = [
   {
     key: 'nudge',
     tone: 'watch',
-    label: 'Stay with me',
+    label: 'Take a break',
     confidence: 74,
     focus: 58,
     eyes: 'Away',
-    alert: { icon: Coffee, title: 'Feeling drowsy?', sub: 'Take a breath — eyes on the road' },
+    alert: { icon: Coffee, title: 'Feeling drowsy?', sub: 'Stop safely and take a break' },
   },
   { key: 'recover', tone: 'ok', label: 'Back on track', confidence: 99, focus: 100, eyes: 'Road' },
 ]
@@ -174,7 +174,9 @@ export function DeviceMockup() {
         </div>
       </div>
 
-      {/* Floating "night-safe" chip */}
+      <p className="mt-4 text-center text-xs text-muted">Illustrative preview with sample values.</p>
+
+      {/* Floating feature chip */}
       <motion.div
         className="absolute -left-6 top-24 hidden items-center gap-2 rounded-2xl border border-border/70 bg-surface/90 px-3 py-2 shadow-card backdrop-blur sm:flex"
         initial={{ opacity: 0, x: -12 }}
@@ -183,11 +185,11 @@ export function DeviceMockup() {
         transition={{ delay: 0.5, duration: 0.6 }}
       >
         <span className="grid h-8 w-8 place-items-center rounded-full bg-insight/15 text-insight dark:text-insight-light">
-          <Moon className="h-4 w-4" />
+          <Eye className="h-4 w-4" />
         </span>
         <div className="leading-tight">
-          <div className="text-xs font-semibold text-fg">Works day &amp; night</div>
-          <div className="text-[11px] text-muted">Even offline</div>
+          <div className="text-xs font-semibold text-fg">Driver safety alerts</div>
+          <div className="text-[11px] text-muted">On your phone</div>
         </div>
       </motion.div>
     </motion.div>

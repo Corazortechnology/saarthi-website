@@ -1,11 +1,12 @@
 import { Container } from '../components/ui/Container'
+import { CONTACT_EMAIL, contactMailto } from '../lib/contact'
 
 export function PrivacyPage() {
   return (
     <main className="pt-28 pb-20">
       <Container className="max-w-3xl">
         <h1 className="text-4xl font-extrabold text-fg">Privacy policy</h1>
-        <p className="mt-3 text-sm text-muted">Effective 2 October 2026</p>
+        <p className="mt-3 text-sm text-muted">Effective 2 October 2026 · Contact details updated 28 October 2026</p>
         <div className="mt-10 space-y-7 text-muted">
           <section>
             <h2 className="text-xl font-semibold text-fg">What Saarthi collects</h2>
@@ -21,11 +22,11 @@ export function PrivacyPage() {
           </section>
           <section>
             <h2 className="text-xl font-semibold text-fg">Your choices</h2>
-            <p className="mt-2">You can revoke Family or Fleet links, control optional tuning capture, and request access, correction, export, or deletion by emailing privacy@saarthiin.com.</p>
+            <p className="mt-2">You can revoke Family or Fleet links, control optional tuning capture, and request access, correction, export, or deletion by emailing <a href={contactMailto('Saarthi privacy request')} className="break-all text-accent underline underline-offset-2">{CONTACT_EMAIL}</a>.</p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-fg">Security and contact</h2>
-            <p className="mt-2">Saarthi uses authenticated access, encrypted transport, scoped relationships, and expiring credentials. For privacy or security questions, contact privacy@saarthiin.com.</p>
+            <p className="mt-2">Saarthi uses authenticated access, encrypted transport, scoped relationships, and expiring credentials. For privacy or security questions, contact <a href={contactMailto('Saarthi privacy or security enquiry')} className="break-all text-accent underline underline-offset-2">{CONTACT_EMAIL}</a>.</p>
           </section>
         </div>
       </Container>

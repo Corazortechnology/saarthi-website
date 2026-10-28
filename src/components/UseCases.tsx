@@ -7,26 +7,26 @@ const CASES = [
   {
     icon: Moon,
     title: 'The late-night long haul',
-    risk: 'Highways are barely 5% of India’s roads, yet see about 59% of crash deaths — and fatigue peaks on empty roads after midnight.',
-    help: 'Saarthi feels drowsiness setting in and nudges the driver awake before a micro-sleep becomes a tragedy.',
+    risk: 'Long journeys and driving at times when you would normally sleep can make it harder to stay alert.',
+    help: 'Saarthi watches for signs of fatigue and can remind you to stop in a safe place for a break.',
   },
   {
     icon: Smartphone,
     title: 'A glance in the city',
-    risk: 'At 50 km/h, a 2-second glance at a phone means ~28 metres driven completely blind. Phone use alone killed 2,884 people in 2023.',
-    help: 'The moment eyes leave the road, Saarthi gives a calm prompt to look back up — before the gap closes.',
+    risk: 'At 50 km/h, a vehicle travels about 28 metres in two seconds. Looking at a phone during that time takes your attention away from the road.',
+    help: 'When Saarthi detects sustained distraction, it can prompt you to bring your attention back to driving.',
   },
   {
     icon: Package,
     title: 'The back-to-back shift',
-    risk: 'Working-age Indians (18–60) account for over 83% of road deaths. Delivery and gig drivers push through long, tiring shifts.',
-    help: 'Saarthi rides along on a personal phone, keeping tired riders alert trip after trip — light on battery and data.',
+    risk: 'Consecutive trips and long shifts can leave cab and delivery drivers with too little time to rest.',
+    help: 'On a compatible phone mounted inside the vehicle, Saarthi provides fatigue and distraction alerts throughout the shift.',
   },
   {
     icon: CarFront,
     title: 'The family expressway trip',
-    risk: 'Over-speeding is behind 68% of road deaths, and long, straight stretches quietly lull attention on holiday drives.',
-    help: 'Saarthi keeps a gentle, watchful eye on monotonous roads and checks in the instant focus drifts.',
+    risk: 'Long, repetitive stretches of road can make it difficult to maintain attention. Regular breaks remain an important part of the journey.',
+    help: 'Saarthi can flag signs of fatigue or distraction, helping the driver recognise when it is time to refocus or rest.',
   },
 ]
 
@@ -36,8 +36,8 @@ export function UseCases() {
     <Section id="use-cases">
       <SectionHeading
         eyebrow="Where it matters"
-        title="Built for the moments that go wrong"
-        subtitle="The same lost second causes crashes across very different drives. Here’s where Saarthi quietly steps in."
+        title="Support for everyday driving risks"
+        subtitle="Fatigue and distraction can affect many kinds of journeys. Here’s how Saarthi can help."
       />
 
       <motion.div

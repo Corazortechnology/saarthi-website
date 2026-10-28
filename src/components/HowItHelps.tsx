@@ -8,19 +8,19 @@ const STEPS = [
     icon: CarFront,
     step: '01',
     title: 'Mount your phone',
-    desc: 'Pop your phone on any dashboard mount so it can see the driver. That’s the whole setup.',
+    desc: 'Secure your phone in a suitable mount with a clear view of your face and without obstructing the road.',
   },
   {
     icon: Play,
     step: '02',
     title: 'Start your drive',
-    desc: 'Tap start once. Saarthi settles in for a quick check, then fades into the background.',
+    desc: 'Complete the setup and calibration while parked, then start monitoring before you drive.',
   },
   {
     icon: ShieldCheck,
     step: '03',
     title: 'Saarthi watches out for you',
-    desc: 'Drive normally. If focus slips or fatigue sets in, you’ll get a calm, timely heads-up.',
+    desc: 'Stay attentive to the road. Saarthi can alert you when it detects signs of fatigue or distraction.',
   },
 ]
 
@@ -30,8 +30,8 @@ export function HowItHelps() {
     <Section id="how" className="bg-surface/30">
       <SectionHeading
         eyebrow="How it works"
-        title="Three taps from your first safer drive"
-        subtitle="No training, no accounts to wrangle, no wiring. If you can start a maps route, you can start Saarthi."
+        title="Get started in three simple steps"
+        subtitle="Set up your account, position your phone and complete calibration before starting your journey."
       />
 
       <motion.div

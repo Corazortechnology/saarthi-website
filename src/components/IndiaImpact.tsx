@@ -1,34 +1,37 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowRight, Clock, Globe2, TrendingUp } from 'lucide-react'
+import { ArrowRight, Clock, TrendingUp } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Reveal } from './ui/Reveal'
 import { AnimatedCounter } from './ui/AnimatedCounter'
 import { fadeUp, stagger } from '../lib/motion'
+import { ROAD_SAFETY_2025, ROAD_DEATHS_PER_DAY_2025, ROAD_DEATHS_PER_HOUR_2025 } from '../content/road-safety-data'
 
 const STATS = [
   {
-    value: 172890,
+    value: ROAD_SAFETY_2025.deaths,
     locale: 'en-IN',
-    label: 'lives lost on Indian roads in 2023',
-    sub: '≈ 20 every hour — up 2.6% year on year',
+    label: 'lives lost on Indian roads in 2025',
+    sub: 'Provisional national total',
   },
   {
-    value: 480583,
+    value: ROAD_SAFETY_2025.crashes,
     locale: 'en-IN',
-    label: 'road crashes in a single year',
-    sub: 'Over 4.6 lakh people left injured',
+    label: 'road crashes reported in 2025',
+    sub: 'More than 5.13 lakh crashes nationwide',
   },
   {
-    value: 68,
+    value: ROAD_SAFETY_2025.deathIncreasePercent,
+    decimals: 1,
     suffix: '%',
-    label: 'of road deaths involve overspeeding',
-    sub: 'Human error is the dominant cause',
+    label: 'increase in road deaths',
+    sub: 'Compared with 2024',
   },
   {
-    value: 66,
+    value: ROAD_SAFETY_2025.crashIncreasePercent,
+    decimals: 1,
     suffix: '%',
-    label: 'of victims are aged 18–45',
-    sub: 'People in the prime of their lives',
+    label: 'increase in reported crashes',
+    sub: 'Compared with 2024',
   },
 ]
 
@@ -48,19 +51,19 @@ export function IndiaImpact() {
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 font-mono text-xs font-medium uppercase tracking-wider text-white/80">
                 <Clock className="h-3.5 w-3.5 text-critical" />
-                The reality on Indian roads
+                2025 road-safety data · provisional
               </span>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-5 max-w-3xl text-balance text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
-                Every 3 minutes, India loses someone to a road crash.
+                India lost about {ROAD_DEATHS_PER_DAY_2025} people a day on its roads in 2025.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 max-w-2xl text-pretty text-white/75 sm:text-lg">
-                Most of these are not accidents of fate. Again and again the cause is the same — a moment of
-                lost focus behind the wheel: over-speeding, drowsiness, a glance away. That single moment is
-                exactly what Saarthi is built to catch.
+                Every road death affects a family, a livelihood and a community. Safer roads need
+                sustained action. Saarthi is designed to help drivers recognise signs of fatigue and
+                distraction, so they can refocus or stop for a break.
               </p>
             </Reveal>
 
@@ -79,7 +82,7 @@ export function IndiaImpact() {
                   className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur"
                 >
                   <div className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                    <AnimatedCounter value={s.value} suffix={s.suffix} locale={s.locale} />
+                    <AnimatedCounter value={s.value} suffix={s.suffix} locale={s.locale} decimals={s.decimals} />
                   </div>
                   <div className="mt-2 text-sm font-medium text-white/85">{s.label}</div>
                   <div className="mt-1 text-xs text-white/50">{s.sub}</div>
@@ -87,17 +90,17 @@ export function IndiaImpact() {
               ))}
             </motion.div>
 
-            {/* Global context callout */}
+            {/* Averages derived from the same 2025 national total */}
             <Reveal delay={0.1}>
               <div className="mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-start gap-3">
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-critical/15 text-critical">
-                    <Globe2 className="h-5 w-5" />
+                    <Clock className="h-5 w-5" />
                   </span>
                   <p className="text-sm leading-relaxed text-white/80">
-                    India has about <span className="font-semibold text-white">1% of the world's vehicles</span>{' '}
-                    — yet accounts for roughly{' '}
-                    <span className="font-semibold text-white">11% of all road-crash deaths</span> on Earth.
+                    An average of about{' '}
+                    <span className="font-semibold text-white">{ROAD_DEATHS_PER_HOUR_2025} lives were lost every hour</span>{' '}
+                    on Indian roads in 2025.
                   </p>
                 </div>
                 <div className="flex items-center gap-3 sm:border-l sm:border-white/10 sm:pl-6">
@@ -105,8 +108,9 @@ export function IndiaImpact() {
                     <TrendingUp className="h-5 w-5" />
                   </span>
                   <p className="text-sm leading-relaxed text-white/80">
-                    Crashes cost the country an estimated{' '}
-                    <span className="font-semibold text-white">~3% of GDP</span> every year.
+                    That is about{' '}
+                    <span className="font-semibold text-white">{ROAD_DEATHS_PER_DAY_2025} lives lost each day</span>,{' '}
+                    averaged across the year.
                   </p>
                 </div>
               </div>
@@ -117,17 +121,20 @@ export function IndiaImpact() {
               <div className="mt-8 flex flex-col gap-2 rounded-2xl border border-teal-activeDark/30 bg-teal-activeDark/[0.07] p-6 sm:flex-row sm:items-center sm:gap-4">
                 <ArrowRight className="hidden h-5 w-5 shrink-0 text-teal-activeDark sm:block" />
                 <p className="text-pretty text-sm font-medium text-white sm:text-base">
-                  The good news: when the cause is a lost moment of attention, it can be prevented. Saarthi
-                  gives every driver a calm, watchful second pair of eyes — so more of these journeys end at
-                  home, safely.
+                  Timely reminders can help drivers recognise when they need to refocus or rest.
+                  Saarthi supports that decision with alerts for signs of fatigue and distraction.
                 </p>
               </div>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="mt-6 font-mono text-[11px] leading-relaxed text-white/40">
-                Sources: Ministry of Road Transport &amp; Highways, “Road Accidents in India 2023”; World Bank
-                road-safety estimates. Figures are national totals and rounded where noted.
+              <p className="mt-6 font-mono text-[11px] leading-relaxed text-white/65">
+                Source: MoRTH figures presented to the Lok Sabha on 23 July 2026, reported by{' '}
+                <a href={ROAD_SAFETY_2025.sources.hindustanTimes} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">Hindustan Times</a>{' '}
+                and{' '}
+                <a href={ROAD_SAFETY_2025.sources.timesOfIndia} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">The Times of India</a>{' '}
+                on 24 July 2026. Calendar-year 2025 eDAR totals are provisional and may be revised.
+                Daily and hourly averages are rounded.
               </p>
             </Reveal>
           </div>

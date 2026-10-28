@@ -16,15 +16,15 @@ export function BatteryFactCallout() {
               </div>
               <div className="flex-1">
                 <p className="font-mono text-xs font-semibold uppercase tracking-wider text-teal-rest dark:text-teal-restDark">
-                  Factual
+                  Battery and data
                 </p>
                 <h2 className="mt-2 text-balance text-xl font-bold tracking-tight text-fg sm:text-2xl">
-                  Built to stay light on your phone
+                  Plan for the journey ahead
                 </h2>
                 <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-muted sm:text-base">
-                  Saarthi runs on-device and is tuned for everyday driving — it is designed{' '}
-                  <strong className="font-semibold text-fg">not to drain your battery</strong> during a
-                  typical trip. No background tracking when you&apos;re not driving.
+                  Driver monitoring runs on your phone. Battery use varies with your device, trip length
+                  and enabled features. Keep your phone charged for longer journeys; online services
+                  such as trip synchronisation also use data.
                 </p>
                 <Link
                   to="/drivers#faq"

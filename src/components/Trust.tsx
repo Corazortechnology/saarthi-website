@@ -4,16 +4,16 @@ import { Reveal } from './ui/Reveal'
 import { AnimatedCounter } from './ui/AnimatedCounter'
 
 const STATS = [
-  { value: 2, suffix: ' min', label: 'Typical setup time' },
-  { value: 0, label: 'Extra devices to buy' },
-  { value: 100, suffix: '%', label: 'On-device by design' },
+  { value: 1, label: 'Compatible phone for driver monitoring' },
+  { value: 0, label: 'Dedicated monitoring devices required' },
+  { value: 2, label: 'Mobile platforms: iOS and Android' },
 ]
 
 const PRINCIPLES = [
-  { icon: HandHeart, title: 'Calm, not alarmist', desc: 'Alerts are designed to steady you, never to panic you.' },
+  { icon: HandHeart, title: 'Clear guidance', desc: 'Timely alerts help you recognise when to refocus or take a break.' },
   { icon: EyeOff, title: 'Respects your privacy', desc: 'Your camera view stays on your phone during the drive.' },
-  { icon: Accessibility, title: 'Built to be accessible', desc: 'Honors reduced-motion and reads clearly, day or night.' },
-  { icon: Gauge, title: 'Runs efficiently', desc: 'On-device processing tuned for everyday driving — no cloud video upload.' },
+  { icon: Accessibility, title: 'Built to be accessible', desc: 'The website respects reduced-motion preferences and offers light and dark themes.' },
+  { icon: Gauge, title: 'Local driver monitoring', desc: 'Routine camera processing stays on your phone during the drive.' },
 ]
 
 export function Trust() {
@@ -25,7 +25,7 @@ export function Trust() {
           {STATS.map((s) => (
             <Reveal key={s.label} className="text-center">
               <div className="text-4xl font-bold tracking-tight text-fg sm:text-5xl">
-                <AnimatedCounter value={s.value} suffix={s.suffix} />
+                <AnimatedCounter value={s.value} />
               </div>
               <div className="mt-2 text-sm text-muted">{s.label}</div>
             </Reveal>

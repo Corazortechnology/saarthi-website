@@ -2,27 +2,28 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Cpu, LineChart, Rocket, Sparkles } from 'lucide-react'
 import { Section, SectionHeading } from './ui/Section'
 import { fadeUp, stagger } from '../lib/motion'
+import { ROAD_SAFETY_2025 } from '../content/road-safety-data'
 
 const REASONS = [
   {
     icon: Cpu,
-    title: 'Phones finally caught up',
-    desc: 'The phone in every cab is now powerful enough to watch the road in real time — so safety no longer needs a box on the dashboard.',
+    title: 'More capability in your phone',
+    desc: 'Compatible smartphones can support driver monitoring through the camera already built into the device.',
   },
   {
     icon: Sparkles,
-    title: 'Safety shouldn’t need hardware',
-    desc: 'Dashcams and dongles are costly, slow to fit and impossible to scale. Software-defined safety updates and spreads instantly.',
+    title: 'Simpler deployment',
+    desc: 'A phone-based system can reduce the need for dedicated devices, vehicle wiring and installation appointments.',
   },
   {
     icon: LineChart,
     title: 'The stakes keep rising',
-    desc: 'India’s road deaths are climbing year on year. Waiting for hardware budgets and installs costs lives that a phone could help save today.',
+    desc: `Provisional 2025 figures show a ${ROAD_SAFETY_2025.deathIncreasePercent}% rise in India’s road deaths over 2024. The need for sustained road-safety action remains urgent.`,
   },
   {
     icon: Rocket,
-    title: 'Ready for millions of drivers',
-    desc: 'From one car to a national fleet, Saarthi reaches every driver through the device they already carry — no supply chain, no wiring.',
+    title: 'A path to wider access',
+    desc: 'Start with a small group of drivers and expand through compatible phones as your pilot grows.',
   },
 ]
 
@@ -32,8 +33,8 @@ export function WhyNow() {
     <Section id="why-now" className="bg-surface/30">
       <SectionHeading
         eyebrow="Why now"
-        title="A safety category whose time has come"
-        subtitle="For decades, driver safety meant buying and bolting in hardware. That era is ending — and Saarthi is built for what comes next."
+        title="Making driver safety easier to access"
+        subtitle="Compatible phones offer another way to bring driver monitoring to everyday journeys and commercial fleets."
       />
 
       <motion.div
@@ -59,6 +60,11 @@ export function WhyNow() {
           </motion.div>
         ))}
       </motion.div>
+      <p className="mx-auto mt-6 max-w-4xl text-xs leading-relaxed text-muted">
+        2025 figures: MoRTH’s July 2026 parliamentary reply, as reported by{' '}
+        <a href={ROAD_SAFETY_2025.sources.hindustanTimes} target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">Hindustan Times</a>.
+        Provisional totals are subject to revision.
+      </p>
     </Section>
   )
 }

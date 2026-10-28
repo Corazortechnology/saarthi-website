@@ -18,8 +18,8 @@ export function RoadmapPage() {
             <div className="mx-auto max-w-2xl rounded-3xl border border-border/70 bg-surface/60 px-8 py-12 text-center shadow-card">
               <h2 className="text-2xl font-bold text-fg sm:text-3xl">Help us get there faster</h2>
               <p className="mt-4 text-muted">
-                Every driver Saarthi reaches is a life we might save. Join our community of supporters and help
-                bring this co-pilot to more roads.
+                Help more drivers access tools that support safer journeys. Join our community and
+                bring Saarthi to more roads.
               </p>
               <Link
                 to="/support"

@@ -8,17 +8,18 @@ import { Section, SectionHeading } from '../components/ui/Section'
 import { motion, useReducedMotion } from 'framer-motion'
 import { fadeUp, stagger } from '../lib/motion'
 import { TrendingDown, Users, WifiOff } from 'lucide-react'
+import { contactMailto } from '../lib/contact'
 
 const INSURER_BENEFITS = [
   {
     icon: TrendingDown,
-    title: 'Lower loss ratios',
-    desc: 'Catch fatigue and distraction before a near-miss becomes a claim — especially on long-haul and gig fleets.',
+    title: 'Support safer driving',
+    desc: 'Explore how fatigue and distraction alerts can support prevention programmes for personal vehicles and commercial fleets.',
   },
   {
     icon: Users,
     title: 'Reach more policyholders',
-    desc: 'Software on phones drivers already carry — no dongle friction, no install appointments, no hardware capex.',
+    desc: 'Reach drivers through compatible phones they already carry, without arranging dedicated hardware installations.',
   },
   {
     icon: WifiOff,
@@ -35,7 +36,7 @@ function InsurerBenefits() {
       <SectionHeading
         eyebrow="For insurers"
         title="Telematics without the hardware tax"
-        subtitle="Partner on pilots that improve road safety and claims outcomes — at the scale of everyday drivers."
+        subtitle="Partner on pilots to measure how driver-safety support can contribute to better road-safety and claims outcomes."
       />
       <motion.div
         variants={reduce ? undefined : stagger(0.08)}
@@ -73,10 +74,10 @@ export function InsurersPage() {
             Safer drivers, <span className="text-gradient">smarter risk.</span>
           </>
         }
-        subtitle="Claims reduction and telematics insights without hardware friction — anonymised signals from phones policyholders already carry."
+        subtitle="Explore driver-safety insights from phones your policyholders already carry, with clear consent and an agreed pilot scope."
       >
         <a
-          href="mailto:hello@corazor.tech?subject=Saarthi%20insurance%20partnership"
+          href={contactMailto('Saarthi insurance partnership')}
           className="inline-flex items-center gap-2 rounded-full bg-brand-blue px-5 py-2.5 text-sm font-semibold text-white shadow-brand transition hover:brightness-110"
         >
           Partner with us
@@ -90,17 +91,17 @@ export function InsurersPage() {
         items={FAQ_INSURERS}
         eyebrow="Insurer FAQ"
         title="Questions from risk &amp; product teams"
-        subtitle="Data, privacy, pilots, and telematics fit — what insurers ask before partnering."
+        subtitle="Answers about data, privacy, pilot design and integration with your telematics programme."
       />
       <section className="scroll-mt-24 pb-24 pt-8">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <h2 className="text-2xl font-bold text-fg">Explore an insurance pilot</h2>
-          <p className="mt-3 text-muted">Scope cohort size, metrics, and integration with your existing programs.</p>
+          <p className="mt-3 text-muted">Define the participant group, success measures and integration with your existing programmes.</p>
           <a
-            href="mailto:hello@corazor.tech?subject=Saarthi%20insurance%20partnership"
+            href={contactMailto('Saarthi insurance partnership')}
             className="group mt-6 inline-flex items-center gap-2 rounded-full border border-border/70 px-6 py-3 text-sm font-semibold text-fg transition hover:bg-surface2/70"
           >
-            Contact partnerships
+            Contact our partnerships team
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>

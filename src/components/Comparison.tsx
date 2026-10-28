@@ -1,16 +1,15 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { Check, X } from 'lucide-react'
+import { Check, Minus } from 'lucide-react'
 import { Section, SectionHeading } from './ui/Section'
 import { fadeUp, stagger } from '../lib/motion'
 
 const ROWS: { label: string; saarthi: string; legacy: string; legacyOk?: boolean }[] = [
-  { label: 'Upfront hardware cost', saarthi: 'None', legacy: 'Cameras + dongles per vehicle', legacyOk: false },
-  { label: 'Time to go live', saarthi: 'Minutes', legacy: 'Days of installs per vehicle', legacyOk: false },
-  { label: 'Runs on the phone you own', saarthi: 'Yes', legacy: 'Needs dedicated devices', legacyOk: false },
-  { label: 'Scales to more drivers', saarthi: 'Instantly, over the air', legacy: 'New hardware every time', legacyOk: false },
-  { label: 'Maintenance & wiring', saarthi: 'Nothing to service', legacy: 'Repairs, cabling, downtime', legacyOk: false },
-  { label: 'Works offline', saarthi: 'Yes', legacy: 'Often cloud-dependent', legacyOk: false },
-  { label: 'Improves over time', saarthi: 'Updates like any app', legacy: 'Fixed once installed', legacyOk: false },
+  { label: 'Monitoring equipment', saarthi: 'Compatible phone and mount', legacy: 'Dedicated cameras or devices' },
+  { label: 'Getting started', saarthi: 'App setup and calibration', legacy: 'Device installation and setup' },
+  { label: 'Adding drivers', saarthi: 'Onboard compatible phones', legacy: 'Depends on installed equipment' },
+  { label: 'Vehicle wiring', saarthi: 'No dedicated monitoring wiring', legacy: 'Depends on the system' },
+  { label: 'Offline monitoring', saarthi: 'Local driver alerts', legacy: 'Depends on the system' },
+  { label: 'Software updates', saarthi: 'Through app releases', legacy: 'Depends on the provider' },
 ]
 
 export function Comparison() {
@@ -19,8 +18,8 @@ export function Comparison() {
     <Section id="compare">
       <SectionHeading
         eyebrow="A better way"
-        title="Saarthi vs. the old hardware playbook"
-        subtitle="Traditional driver-monitoring means boxes, cables and per-vehicle bills. Saarthi delivers the same watchful safety as pure software."
+        title="Choose the setup that fits your fleet"
+        subtitle="Compare a phone-based approach with dedicated monitoring equipment. Features and installation needs vary by system."
       />
 
       <motion.div
@@ -38,7 +37,7 @@ export function Comparison() {
           <span className="flex items-center justify-center gap-1.5 rounded-lg bg-brand-blue/10 px-2 py-1.5 text-center text-sm font-bold text-brand-blue dark:text-brand-blueLight">
             Saarthi
           </span>
-          <span className="text-center text-sm font-semibold text-muted">Legacy DMS hardware</span>
+          <span className="text-center text-sm font-semibold text-muted">Dedicated monitoring systems</span>
         </div>
 
         {/* Rows */}
@@ -54,7 +53,7 @@ export function Comparison() {
               <span>{r.saarthi}</span>
             </span>
             <span className="flex items-center justify-center gap-1.5 text-center text-xs text-muted sm:text-sm">
-              <X className="h-4 w-4 shrink-0 text-critical/70" />
+              <Minus className="h-4 w-4 shrink-0 text-muted" />
               <span>{r.legacy}</span>
             </span>
           </motion.div>

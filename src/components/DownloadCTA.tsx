@@ -17,7 +17,7 @@ export function DownloadCTA() {
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider text-white/80">
                 <ShieldCheck className="h-3.5 w-3.5" />
-                No hardware required
+                No dedicated monitoring device
               </span>
             </Reveal>
             <Reveal delay={0.05}>
@@ -27,8 +27,8 @@ export function DownloadCTA() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mx-auto mt-4 max-w-xl text-pretty text-white/80">
-                Download Saarthi and turn the phone in your pocket into a calm, always-there safety partner —
-                free to try, ready in minutes.
+                Explore Saarthi for your next journey. Check the availability below or contact our team
+                about joining a pilot.
               </p>
             </Reveal>
             <Reveal delay={0.15}>

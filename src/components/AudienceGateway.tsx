@@ -13,7 +13,7 @@ export function AudienceGateway() {
       <SectionHeading
         eyebrow="Who it’s for"
         title="One safety co-pilot, every kind of driver"
-        subtitle="Pick the path that fits you — details live on dedicated pages so the homepage stays focused."
+        subtitle="Explore how Saarthi can support your daily journeys, your fleet or your insurance programme."
       />
 
       <motion.div
@@ -36,7 +36,7 @@ export function AudienceGateway() {
           >
             {a.featured && (
               <span className="absolute right-5 top-5 rounded-full bg-brand-blue px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-white">
-                Most popular
+                For teams
               </span>
             )}
             <div className="grid h-12 w-12 place-items-center rounded-xl bg-surface2/80 text-accent ring-1 ring-border/70">
@@ -56,7 +56,7 @@ export function AudienceGateway() {
               to={a.href}
               className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue transition hover:gap-3 dark:text-brand-blueLight"
             >
-              Explore {a.title.toLowerCase()}
+              {a.cta}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </motion.div>

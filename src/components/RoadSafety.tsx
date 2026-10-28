@@ -23,15 +23,14 @@ export function RoadSafety() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-4 text-pretty text-base leading-relaxed text-muted sm:text-lg">
-                Every mile driven with Saarthi quietly builds a better picture of the road ahead. In the
-                background — and always anonymised — it helps surface rough patches and rough stretches, so
-                journeys get smoother and safer for everyone over time.
+                Road observations can help build a clearer picture of potholes, cracks and rough stretches.
+                Saarthi brings these signals together to support better-informed road-maintenance decisions.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
               <p className="mt-4 text-sm text-muted">
-                Drivers see none of the complexity — just a safer trip. The bigger road-safety picture takes
-                care of itself.
+                Drivers focus on the journey while authorised teams review road-condition information
+                and identify areas that need attention.
               </p>
             </Reveal>
           </div>

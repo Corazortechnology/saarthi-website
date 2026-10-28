@@ -13,10 +13,10 @@ import {
 const ITEMS = [
   { icon: Smartphone, label: 'No extra hardware' },
   { icon: Lock, label: 'Private by design' },
-  { icon: WifiOff, label: 'Works offline' },
-  { icon: Bell, label: 'Calm, non-alarmist alerts' },
-  { icon: BatteryCharging, label: 'Light on battery' },
-  { icon: Truck, label: 'Fleet-ready in days' },
+  { icon: WifiOff, label: 'Local driver alerts' },
+  { icon: Bell, label: 'Timely safety alerts' },
+  { icon: BatteryCharging, label: 'Plan charging for long trips' },
+  { icon: Truck, label: 'Fleet pilots' },
   { icon: Globe, label: 'Built for Indian roads' },
   { icon: Sparkles, label: 'Accessible by design' },
 ]

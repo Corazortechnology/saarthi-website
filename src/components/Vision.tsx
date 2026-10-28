@@ -19,9 +19,9 @@ export function Vision({ className }: { className?: string }) {
                 Toward zero <span className="text-gradient">preventable crashes.</span>
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted sm:text-lg">
-                We believe the most powerful safety device is already in every driver’s pocket. By making a
-                watchful co-pilot free of hardware and friction, Saarthi aims to reach millions of drivers —
-                and turn countless near-misses into ordinary, safe arrivals.
+                We believe the phone you already carry can play a useful part in a safer journey.
+                Saarthi aims to make driver-safety support easier to access, so more people can
+                recognise risks and build safer driving habits.
               </p>
             </div>
           </div>

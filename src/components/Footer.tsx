@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Container } from './ui/Container'
 import { Logo } from './ui/Logo'
+import { CONTACT_EMAIL, contactMailto } from '../lib/contact'
 
-const COLS = [
+type FooterLink = { label: string; to: string } | { label: string; href: string }
+
+const COLS: { title: string; links: FooterLink[] }[] = [
   {
     title: 'Product',
     links: [
@@ -19,13 +22,13 @@ const COLS = [
     links: [
       { label: 'About', href: '#' },
       { label: 'Careers', href: '#' },
-      { label: 'Contact', href: 'mailto:hello@corazor.tech' },
+      { label: 'Contact', href: contactMailto() },
     ],
   },
   {
     title: 'Legal',
     links: [
-      { label: 'Privacy', href: '#' },
+      { label: 'Privacy', to: '/privacy' },
       { label: 'Terms', href: '#' },
       { label: 'Safety', href: '#' },
     ],
@@ -42,9 +45,10 @@ export function Footer() {
               <Logo />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted">
-              Saarthi is your in-car safety co-pilot — gentle, timely help that keeps drivers alert and
-              focused, straight from a phone.
+              Saarthi is your safety co-pilot for the road, with timely alerts to help you stay attentive
+              behind the wheel.
             </p>
+            <a href={contactMailto()} className="mt-4 inline-block break-all text-sm text-accent hover:underline">{CONTACT_EMAIL}</a>
           </div>
           {COLS.map((col) => (
             <div key={col.title}>

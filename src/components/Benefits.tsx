@@ -6,20 +6,20 @@ import { fadeUp, stagger } from '../lib/motion'
 const BENEFITS = [
   {
     icon: Coffee,
-    title: 'Beats drowsiness',
-    desc: 'Feels the first signs of tiredness and nudges you awake before a yawn turns into a close call.',
+    title: 'Recognise signs of fatigue',
+    desc: 'Alerts for signs of tiredness can remind you to stop somewhere safe and take a break.',
     accent: 'text-warn dark:text-warn-dark',
   },
   {
     icon: Eye,
     title: 'Keeps eyes on the road',
-    desc: 'A gentle prompt the moment attention drifts to a phone, a sign, or a daydream.',
+    desc: 'Get a reminder to refocus when Saarthi detects sustained distraction.',
     accent: 'text-brand-blue dark:text-brand-blueLight',
   },
   {
     icon: BellRing,
-    title: 'Calm, never alarmist',
-    desc: 'Guidance that steadies you with sound, voice and vibration — designed to reassure, not startle.',
+    title: 'Clear, timely alerts',
+    desc: 'Sound, voice and vibration help bring important safety alerts to your attention.',
     accent: 'text-teal-rest dark:text-teal-restDark',
   },
   {
@@ -30,14 +30,14 @@ const BENEFITS = [
   },
   {
     icon: Route,
-    title: 'Runs in the background',
-    desc: 'Keep using maps and music — Saarthi keeps watching over the whole trip without getting in the way.',
+    title: 'Fits into your journey',
+    desc: 'Use supported navigation and audio features alongside driver monitoring on compatible phones.',
     accent: 'text-brand-blue dark:text-brand-blueLight',
   },
   {
     icon: HeartHandshake,
     title: 'Peace of mind',
-    desc: 'For families and fleets alike: safer arrivals, fewer incidents, and confidence on every journey.',
+    desc: 'Give families and fleet teams more confidence with tools that support attentive driving.',
     accent: 'text-ok dark:text-ok-dark',
   },
 ]
@@ -49,7 +49,7 @@ export function Benefits() {
       <SectionHeading
         eyebrow="What you get"
         title="Real value on every drive"
-        subtitle="Saarthi works like an attentive co-pilot — always watching the road with you and speaking up only when it matters."
+        subtitle="Saarthi watches for signs of fatigue and distraction to support better decisions behind the wheel."
       />
 
       <motion.div
