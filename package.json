@@ -3,12 +3,14 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Saarthi marketing website — driver safety, right from your phone.",
+  "description": "Saarthi marketing website \u2014 driver safety, right from your phone.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "tsc -b --noEmit"
+    "lint": "tsc -b --noEmit",
+    "test:insurance": "node --experimental-strip-types --test tests/insurance/*.test.mjs",
+    "build:insurance-demo": "tsc -b && vite build --base=/insurance/ --outDir=dist-insurance"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.7",

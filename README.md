@@ -69,3 +69,11 @@ Any static host works. The build outputs to `dist/`.
 ---
 
 © Saarthi by Corazor Technology.
+
+## Insurance intelligence demo — 5 November 2026
+
+The complete insurance demonstration is available at `/insurance`. It uses deterministic local data for 100 drivers, 110 vehicles and twelve months of linked activity, plus mock alert delivery, annotated camera analysis, claims outcomes and integration workflows. It does not connect to production APIs.
+
+Run `npm run dev -- --host 127.0.0.1 --port 5186`, then open `http://127.0.0.1:5186/insurance`.
+
+Run `npm run test:insurance` for integrity and analytics checks. See [insurance runbook](docs/insurance/README.md) for the feature guide, architecture, definitions and validation evidence.

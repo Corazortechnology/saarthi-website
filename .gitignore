@@ -29,3 +29,7 @@ dist-ssr
 
 # TypeScript build info
 *.tsbuildinfo
+
+# Insurance build for the shared Azure demo host
+dist-insurance
+dist-demo

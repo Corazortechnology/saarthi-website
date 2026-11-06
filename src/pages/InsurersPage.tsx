@@ -83,6 +83,7 @@ export function InsurersPage() {
           Partner with us
           <ArrowRight className="h-4 w-4" />
         </a>
+        <a href="/insurance" className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-semibold">Explore insurance demo <ArrowRight className="h-4 w-4" /></a>
       </PageHero>
       <InsurerBenefits />
       <Comparison />
