@@ -45,7 +45,7 @@ const pages = ['overview', 'portfolio', 'vehicles', 'drivers', 'incidents', 'ale
 const rewrite = route => ({ route, rewrite: '/insurance/index.html' });
 config.routes = [
   { route: '/insurance/assets/*', headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
-  rewrite('/insurance'), rewrite('/insurance/'),
+  rewrite('/insurance'),
   ...pages.flatMap(page => [rewrite(`/insurance/${page}`), rewrite(`/insurance/${page}/*`)]),
   ...(config.routes || []),
 ];
@@ -65,6 +65,6 @@ for (const file of baseFiles) {
 const outputFiles = await files(output);
 const bytes = (await Promise.all(outputFiles.map(f => stat(f)))).reduce((sum, s) => sum + s.size, 0);
 if (bytes > 250 * 1024 * 1024) throw Error('Composed release exceeds the existing 250 MiB static content limit.');
-const report = { output, files: outputFiles.length, bytes, preservedBaseFiles: baseFiles.length - 1, addedRouteRules: 3 + pages.length * 2, baseConfigurationPreserved: true };
+const report = { output, files: outputFiles.length, bytes, preservedBaseFiles: baseFiles.length - 1, addedRouteRules: 2 + pages.length * 2, baseConfigurationPreserved: true };
 await writeFile(join(output, '..', 'composition.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify(report, null, 2));

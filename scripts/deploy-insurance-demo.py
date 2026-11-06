@@ -18,7 +18,7 @@ release = args.release.resolve()
 if release.name != 'dist':
     raise SystemExit('The composed release directory must be named dist.')
 report = json.loads((release.parent / 'composition.json').read_text())
-if pathlib.Path(report['output']) != release or not report['baseConfigurationPreserved']:
+if pathlib.Path(report['output']).resolve() != release or not report['baseConfigurationPreserved']:
     raise SystemExit('Prepare a composed release before deploying.')
 for path in ['insurance/index.html', 'index.html', 'app/main.dart.js', 'watch/index.html']:
     if not (release / path).is_file():
