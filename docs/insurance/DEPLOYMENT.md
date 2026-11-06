@@ -30,3 +30,13 @@ python3 scripts/deploy-insurance-demo.py \
 This reuses the established official Azure Linux uploader. The wrapper checks the target custom domain, pins the subscription and creates unique temporary resource names. The uploader uses private temporary artifact storage and credentials held in memory, then removes its temporary container and storage. No deployment token is committed or printed.
 
 After publishing, confirm HTTPS for `/insurance`, `/insurance/guide`, a direct profile link and the hashed assets. Compare the original film/simulator files with their saved hashes and inspect the dashboard in a browser. A rollback publishes the preserved base release with its original `staticwebapp.config.json` using the existing simulator deployment workflow.
+
+## Published 6 November 2026
+
+- URL: https://demo.saarthiin.com/insurance
+- Azure release: `9b8326f0-efef-418d-b1fe-84eba76a9234`, Succeeded / Ready at 10:14:30 UTC.
+- Application commit: `1a1e420`; deployment tooling correction: `19d8f12`.
+- Combined release: 2,028 files, 249,206,607 bytes. All 1,907 original content files were preserved; only the shared routing config was extended.
+- All 148 public route/file checks matched the prepared build, including the insurance routes, assets and six existing film/simulator files. The public dashboard rendered 76,628 trips; its help page opened correctly, and browser diagnostics were empty.
+- Temporary publishing resources were removed. The first attempt was rejected for duplicate trailing-slash routing; removing the duplicate produced the successful release.
+- Machine-readable evidence: [deployment-20261106.json](deployment-20261106.json).
